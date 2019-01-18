@@ -9,29 +9,17 @@ export default class Post extends Component {
   }
 
   render() {
-    const {username, photo, name, email } = this.props;
+    const {username, gif, title } = this.props;
     return(
-      <article>
-        <hr />
-        <div style={{ display: 'flex' }}>
-          <img
-            alt={username}
-            src={photo}
-            style={{
-              borderRadius: '50%',
-              height: 72,
-              marginRight: 20,
-              width: 72,
-            }}
-          />
-          <div>
-            <h2 style={{ marginTop: 0 }}>
-              @{username}
-            </h2>
-            <p>Name: {name}</p>
-            <p>Email: {email}</p>
-          </div>
+      <article className='post'>
+        <div className='gif'
+          style={{backgroundImage: `url(${gif})`}}
+        >
         </div>
+        <div className='description'>
+          <h3 className='marker'>{title}</h3>
+        </div>
+  
       </article>
     )
   }
